@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>がんこみ</title>
     <style>
+
+        body {
+            display: grid;
+            grid-template:
+            'left-colmun main right-colmun'/ 10% 80% 10%;
+        }
+
+        main {
+            grid-area: main;
+        }
+
         #main-logo {
             text-align: center;
             img {
@@ -22,6 +33,14 @@
 
         #event-info {
             text-align: center;
+        }
+
+        #right {
+            grid-area: right-colmun;
+        }
+
+        #left {
+            grid-area: left-colmun;
         }
 
     </style>
@@ -63,9 +82,9 @@
             <img src="./img/ad2.png">
         </div>
     </main>
-    <!-- <aside id="right"></aside>
+    <aside id="right"></aside>
     <aside id="left"></aside>
-    <footer>
+    <!-- <footer>
     </footer> -->
 </body>
 </html>
