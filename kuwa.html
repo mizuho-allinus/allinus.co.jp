@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="pink">
+    <title>オリナス</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .anchor{
+            display: block;
+            padding-top: 79px;
+            margin-top: -59px;
+        }
+
+        header {
+            position: fixed;
+            background-color: pink;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            z-index: 1000;
+        }
+
+        #box{
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            left: -100%;
+            top: 0;
+            /* background: rgba(0,0,0,0.8); */
+        }
+
+        .back{
+            transform: translateX(100%);
+        }
+
+        nav {
+            margin: 0 0 0 auto;
+            padding: 0;
+        }
+
+        nav a:hover{
+            background-color: #FFAF87;
+        }
+
+        header ul {
+            height: 100%;
+            margin: 0;
+            list-style:none;
+        }
+
+        header li {
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px 30px 26px 30px;
+        }
+
+        #header-logo img {
+                margin: 5px;
+                height: 70px;
+            }
+
+        main img {
+            height: 378px;
+            border-radius: 10%;
+        }
+
+        .swiper {
+            position: relative;
+            height: 378px;
+            padding: 80px 0 0 0px !important;
+        }
+
+        .swiper:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 997;
+        }
+
+        .swiper--wrapper {
+        /* wrapperのサイズを調整 */
+        
+        width: 100%;
+        height: 378px;
+        }
+
+        .swiper-slide {
+        /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+        color: #ffffff;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 378px;
+        }
+
+        .swiper .swiper-wrapper{
+            transition-timing-function: linear;
+        }
+
+        .menu__btn {
+            transition-duration: 0.25s;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            position: relative;
+            bottom: 4px;
+            width: 26px;
+            height: 35px;
+            margin-right: 26px;
+            cursor: pointer;
+            z-index: 999;
+        }
+
+        .menu__btn span {
+            display: inline-block;
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #ffffff;
+        
+            &::before {
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #ffffff;
+                content: '';
+                top: -8px;
+                transition-duration: 0.25s;
+            }
+        
+            &::after {
+                display: inline-block;
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #ffffff;
+                content: '';
+                top: 8px;
+                transition-duration: 0.25s;
+            }
+            
+        }  
+
+        .menu__item {
+            display: flex;
+            flex-direction: column;
+            color: #000000;
+            font-family: sans-serif;
+            font-weight: 400;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        #menu__toggle {
+            opacity: 0;
+            
+            &:checked ~ .menu__btn > span {
+            transform: rotate(45deg);
+            }
+        
+            &:checked ~ .menu__btn > span::before {
+            top: 0;
+            transform: rotate(0);
+            background: #f06c64;
+            }
+        
+            &:checked ~ .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+                background: #f06c64;
+            }
+        
+            &:checked ~ .menu__box {
+                visibility: visible;
+                left: 0;
+                margin: 0;
+            }
+        
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container li {
+            margin: 16px 0;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .information img {
+            height: 70px;
+        }
+
+
+
+        @media screen and (min-width: 1023px) {
+
+            #nav-content {
+                height: 100%;
+                display: flex;
+            }
+
+            header li {
+                width: 128px;
+            }
+
+            .heart {
+                display: none;
+            }
+
+            #menu__toggle {
+                display: none;
+            }
+
+            .menu__btn{
+                display: none;
+            }
+
+            .brSp{
+                display: none;
+            }
+
+            .mainphrase h1 {
+                font-size: 3.75rem !important;
+            }
+        
+        }
+
+        @media (min-width: 860px) and (max-width: 1023px){
+            .heart {
+                /* width: 120px; */
+                /* height: 120px; */
+                position: relative;
+            }
+
+            .heart::before,.heart::after {
+                content: "";
+                position: absolute;
+                top: 11px;
+                width: 35px;
+                height: 57px;
+                background: #97d9e1;
+                border-radius: 100px 100px 0 0;
+            }
+
+            .heart::before {
+                left: 13px;
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+            }
+
+            .heart::after {
+                left: -22px;
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
+            }
+
+            nav {
+                display: inline;
+            }
+
+            .menu__box {
+                flex-direction: column;
+                position: fixed;
+                visibility: hidden;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 26.8em;
+                margin: -600px 0 0 0;
+                padding: 0 0;
+                text-align: center;
+                background-color: pink;
+                box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+                z-index: 998;
+                transition-duration: 0.5s;
+            }
+
+            .menu__item {
+                display: block;
+                padding: 12px 24px;
+                color: #ffffff;
+                font-size: 18px;
+                transition-duration: 0.5s;
+
+                &:hover {background-color: #FFAF87;}
+            }
+
+            .menu__item:hover {
+                background-color: #FFAF87;
+            }
+
+            .mainphrase h1 {
+                font-size: 3.75rem !important;
+            }
+            
+            main img {
+                border-radius: 10%;
+            }
+        }
+
+        @media screen and (max-width: 860px) {
+            
+            .heart {
+                /* width: 120px; */
+                /* height: 120px; */
+                position: relative;
+            }
+
+            .heart::before,.heart::after {
+                content: "";
+                position: absolute;
+                top: 11px;
+                width: 35px;
+                height: 57px;
+                background: #97d9e1;
+                border-radius: 100px 100px 0 0;
+                
+            }
+            .heart::before {
+                left: 13px;
+                transform: rotate(-45deg);
+                transform-origin: 0 100%;
+            }
+            .heart::after {
+                left: -22px;
+                transform: rotate(45deg);
+                transform-origin: 100% 100%;
+            }
+            nav {
+                display: inline;
+            }
+
+            main img {
+                border-radius: 0%;
+            }
+
+            .menu__box {
+                flex-direction: column;
+                position: fixed;
+                visibility: hidden;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 26.8em;
+                margin: -600px 0 0 0;
+                padding: 0 0;
+                text-align: center;
+                background-color: pink;
+                box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+                z-index: 998;
+                transition-duration: 0.5s;
+            }
+
+            .menu__item {
+                display: block;
+                padding: 12px 24px;
+                color: #ffffff;
+                font-size: 18px;
+                transition-duration: 0.5s;
+
+                &:hover {background-color: #FFAF87;}
+            }
+
+            .menu__item:hover {
+                background-color: #FFAF87;
+            }
+        }
+
+        @media screen and (min-width: 550px) {
+            .brSp{
+                display: none;
+            }
+
+            .mainphrase{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 83%;
+                width: 100%;
+                position: absolute;
+                transform: translate(0%, -100%);
+                z-index: 997;
+            }
+
+            .mainphrase h1 {
+                font-size: 2.6rem;
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .mainphrase{
+                height: 83%;
+                width: 100%;
+                position: absolute;
+                position: relative;
+                transform: translate(0%, -100%);
+                z-index: 997;
+            }
+
+            .mainphrase h1 {
+                font-size: 2.5rem;
+                margin-left: 13%;
+                transform: translate(0%, 130%);
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .mainphrase h1 {
+                font-size: 2.5rem;
+                margin-left: 5%;
+                transform: translate(0%, 130%);
+                color: rgb(255, 255, 255);
+            }
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="kuwagen.css">
+    <link rel="stylesheet" href="inquiry.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+        const createPcSwiper = () => {
+            const swiper = new Swiper(".swiper", {    
+                loop: true,
+                autoplay: {
+                    delay: 0,
+                },
+                speed: 20000,
+                slidesPerView: 1,
+                allowTouchMove:false,
+                centeredSlides: false,
+                breakpoints: {
+                    860: {
+                        slidesPerView: 2,
+                        spaceBetween: 230,
+                    },
+                    1300: {
+                        slidesPerView: 3,
+                        spaceBetween: 300,
+                    },
+                }
+            });
+        }
+
+        const createSpSwiper = () => {
+            const swiper = new Swiper(".swiper", {    
+                loop: true,
+                autoplay: {
+                    delay: 0,
+                },
+                speed: 10000,
+                allowTouchMove:false,
+                spaceBetween: 300,
+                centeredSlides: false,
+                effect: 'fade',
+            });
+        }
+
+        const breakPoint = 860;
+
+        let swiper;
+        let swiperBool;
+
+        window.addEventListener(
+        "load",
+        () => {
+            if (breakPoint < window.innerWidth) {
+                createPcSwiper();
+                swiperBool = false;
+            } else {
+                createSpSwiper();
+                swiperBool = true;
+            }
+        },
+        false
+        );
+
+        window.addEventListener(
+        "resize",
+        () => {
+            if (breakPoint < window.innerWidth && swiperBool) {
+                createPcSwiper();
+                swiperBool = false;
+            } else if (breakPoint >= window.innerWidth && !swiperBool) {
+                createSpSwiper();
+                swiperBool = true;
+            }
+        },
+        false
+        );
+
+        // ハンバーガーメニューがクリックされたときの処理
+        const menuToggle = document.getElementById('menu__toggle');
+        const boxElement = document.getElementById('box');
+
+        menuToggle.addEventListener('click', function() {
+            boxElement.classList.toggle('back'); // ボックスの表示/非表示をトグル
+        });
+
+        // リンクをクリックした際にメニューとボックスを非表示にする
+        $('#nav-content a[href]').on('click', function(event) {
+            $('#menu__toggle').prop('checked', false); // メニューを閉じる
+            boxElement.classList.remove('back'); // ボックスを非表示にする
+        });
+
+        // ボックスをクリックしたときにメニューとボックスを非表示にする
+        boxElement.addEventListener('click', function() {
+            $('#menu__toggle').prop('checked', false); // メニューを閉じる
+            boxElement.classList.remove('back'); // ボックスを非表示にする
+        });
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <div id="header-logo">  
+            <a href="#pagetop"><img src="./logo/allinus_logo.svg"></a>
+        </div>
+        
+        <div id="box"></div>
+        <nav>
+            <div class="heart"></div>
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+            <span></span>
+            </label>
+            <ul class="menu__box">
+                <div id="nav-content">
+                    <a class="menu__item" href="#philosophy"><li>企業理念</li></a>
+                    <a class="menu__item" href="#business"><li>事業内容</li></a>
+                    <a class="menu__item" href="#media"><li>メディア掲載実績</li></a>
+                    <a class="menu__item" href="#lecture"><li>講演実績</li></a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div id="pagetop" class="swiper">
+            <!-- 必要に応じたwrapper -->
+            <div class="swiper-wrapper">
+                <!-- スライド -->
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg1.jpg">
+                        <img src="img/homeImg1.jpg">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg2.jpg">
+                        <img src="img/homeImg2.jpg">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg3.jpg">
+                        <img src="img/homeImg3.jpg">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg4.jpg">
+                        <img src="img/homeImg4.jpg">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg5.jpg">
+                        <img src="img/homeImg5.jpg">
+                    </picture>
+                </div>
+                <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg6.jpg">
+                        <img src="img/homeImg6.jpg">
+                    </picture>
+                </div>
+                <!-- <div class="swiper-slide">
+                    <picture>
+                        <source media="(max-width: 470px)" srcset="img/homeSpImg7.jpg">
+                        <img src="img/homeImg7.jpg">
+                    </picture>
+                </div> -->
+            </div>
+            <div class="mainphrase">
+                <h1>人々の<br class="brSp">心と身体を健幸に</h1>
+            </div>
+        </div>
+
+    </main>
+    
+    <div class="container">
+        <style>
+            .philosophy {
+                text-align: center;
+            }
+
+            .philosophy h3 {
+                font-size: 1.6rem;
+            }
+
+            .philosophy p {
+                font-size: 1.2rem;
+            }
+
+        </style>
+        <h2 id="philosophy" class="anchor">企業理念</h2>
+        <div class="philosophy">
+            <h3>「 暮らしのなかに看護を 」</h3>
+            <p>暮らしのなかで人々がもつ<br>ナーシングの力を最大化することで<br>まちを豊かに</p>
+        </div>
+        
+        <h2 id="business" class="anchor">事業内容</h2>
+        
+        <style>
+            .biz-details {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .main-msg {
+                width: 80%;
+                height: 4rem;
+                margin: auto;
+                margin-bottom: 2rem;
+                border-radius: 8px;
+                background-color: pink;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .main-msg p {
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: #444;
+            }
+
+            .main-desc {
+                text-align: center;
+                font-size: 1.2rem;
+                color: #555;
+            }
+        </style>
+        
+        <div class="main-msg">
+            <p>企業の健康を看て護る</p>
+        </div>
+        
+        <p class="main-desc">
+            各企業の社風や文化、雰囲気に合わせた、健康課題の解決をお手伝いします
+        </p>
+        
+        <div class="biz-details">
+            <b>企業の中に保健室</b>
+            <p class="desc">
+                看護師などの専門職のスタッフが企業様に伺い、看護から介護まで幅広い個別相談に応じます。<br>健康診断の中長期的フォローや、フィジカル・メンタルヘルスの支援などを行います。
+            </p>
+        </div>
+        
+        <div class="biz-details">
+            <b>企業の顧問看護師</b>
+            <p class="desc">
+                ヘルスリテラシー向上を目的とした、講座やコミュニケーション促進の場を創造します。
+            </p>
+        </div>
+        
+        <div class="biz-details">
+            <b>ヘルスケアバックアップ</b>
+            <p class="desc">
+                従業員が50人未満の企業様のストレスチェック実施とアフターフォローを行います。
+            </p>
+        </div>
+        
+        <div class="main-msg">
+            <p>暮らしを看て護る</p>
+        </div>
+        
+        <p class="main-desc">暮らしのなかの小さなつながりを生みだし、孤立や孤独を防ぎます</p>
+        
+        <div class="biz-details">
+            <b>企業の中に保健室</b>
+            <p class="desc">
+                看護師などの専門職のスタッフが企業様に伺い、看護から介護まで幅広い個別相談に応じます。<br>健康診断の中長期的フォローや、フィジカル・メンタルヘルスの支援などを行います。
+            </p>
+        </div>
+        
+        <div class="biz-details">
+            <b>企業の顧問看護師</b>
+            <p class="desc">
+                ヘルスリテラシー向上を目的とした、講座やコミュニケーション促進の場を創造します。
+            </p>
+        </div>
+        
+        <div class="biz-details">
+            <b>ヘルスケアバックアップ</b>
+            <p class="desc">
+                従業員が50人未満の企業様のストレスチェック実施とアフターフォローを行います。
+            </p>
+        </div>
+        
+        <h2 id="media" class="anchor">メディア掲載実績</h2>
+        
+        <h4>＜福井テレビ＞</h4>
+        <ul>
+            <li>2019.12.10　訪問看護師</li>
+            <li>2020.01.01　令和の年表～2020年に考える福井からの処方箋</li>
+            <li>2022.12.01　拠点をもたないがんサロン</li>
+        </ul>
+        
+        <h4>＜福井放送＞</h4>
+        <ul>
+            <li>2023.03.21　暮らしのなかのがんサロン</li>
+        </ul>
+        
+        <h4>＜福井新聞＞</h4>
+        <ul>
+            <li>2020.07.28　“カフェから健康支援”</li>
+            <li>2022.02.26　福井のPin　つながりガイドブック掲載</li>
+            <li>2023.11.22　“小さな会社に保健室の先生”</li>
+            <li>2023.02.12　“地域の健康づくり支える　ふくまち大学”</li>
+        </ul>
+
+        <h4>＜福井ケーブルテレビ＞</h4>
+        <ul>
+            <li>2023.06.27　「楽語」ゲスト出演</li>
+        </ul>
+
+        <h4>＜中日新聞＞</h4>
+        <ul>
+            <li>2021.10.03　“福井往来地域と医療“</li>
+        </ul>
+
+        <h4>＜その他＞</h4>
+        <ul>
+            <li>福井情報雑誌URALA 2023年12月号特集掲載</li>
+            <li>雑誌FRAU掲載 2024年 1月号・2月号</li>
+            <li>ウェルビーイングをデザインするライフデザイン 記事掲載 第一生命経済研究所 東洋経済新報社</li>
+        </ul>
+
+        <h2 id="lecture" class="anchor">講演実績</h2>
+
+        <ul>
+            <li><span class="date">2020.09.20</span>日本ホスピス・在宅ケア研究会全国大会　講演</li>
+            <li><span class="date">2020.12.06</span> 福井県薬剤師会　健康サポート薬局研修講演</li>
+            <li><span class="date">2021.01.23</span> 福井ライフアカデミー講座「地域づくり」講演</li>
+            <li><span class="date">2021.09.01</span> 福井県　県職員研修講師</li>
+            <li><span class="date">2022.08.29</span> 日本地域看護学会　第25回学術集会にて登壇</li>
+            <li><span class="date">2022.11.22</span> 福井県　県職員研修講師</li>
+            <li><span class="date">2023.07.19</span> 大野市社会福祉協議会講演</li>
+            <li><span class="date">2023.09.16</span> 敦賀市　介護福祉団体依頼講演</li>
+            <li><span class="date">2023.10.14</span> 鯖江市　市民活躍課依頼講演</li>
+            <li><span class="date">2023.11.12</span> <a href="https://amanism.jp/ucma/report/entry-839.html">尼崎大学　笑うケンシン　講演</a>
+            </li>
+            <li><span class="date">2024.01.25</span> CHESS　学術講演会　講演</li>
+            <li><span class="date">2024.02.13</span> 第40回　福井県商工会議所青年部連合会　講演</li>
+            <li><span class="date">2024.03.05</span> 坂井市商工会議所青年部　講演</li>
+            <li><span class="date">2024.04.16</span> 高浜町/福井大学　健高カフェ　講演</li>
+            <li><span class="date">2024.05.10</span> 仁愛女子高等学校　創立記念講演</li>
+            <li><span class="date">2024.06.08</span> プライマリケア連合学会　キャリアcafé講演</li>
+            <li><span class="date">2024.07.28</span> かいごの学校　講演</li>
+        </ul>
+
+        <div class="inquiry" style="margin-bottom: 20px;">
+            <p style="text-align: center; margin: 40px auto">
+                お気軽にお問い合わせください。
+            </p>
+            <form class="c-form" id="contactForm">
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-name">お名前<span class="c-form__required">必須</span></label>
+                    <input class="c-form__input" id="field-name" placeholder="織成　心" type="text" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-japanese">フリガナ<span class="c-form__required">必須</span></label>
+                    <input class="c-form__input" id="field-japanese" placeholder="オリナス　ココロ" type="text" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-mail">メールアドレス<span class="c-form__required">必須</span></label>
+                    <input class="c-form__input" id="field-mail" placeholder="sample@gmail.com" type="email" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-phone">お電話番号</label>
+                    <input class="c-form__input" id="field-phone" placeholder="0000000000" type="tel" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-message">お問い合わせ内容<span class="c-form__required">必須</span><br>(講演依頼含む)</label>
+                    <textarea class="c-form__input" id="field-message" placeholder="お問い合わせ内容"></textarea>
+                </div>
+                <div class="c-form__submit">
+                    <button type="button" onclick="openModal()">送信内容を確認</button>
+                </div>
+            </form>
+        </div>
+    
+        <!-- モーダルウィンドウ -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content">
+                <h2>送信内容を確認してください</h2>
+                <p><strong>お名前:</strong> <span id="confirmName"></span></p>
+                <p><strong>フリガナ:</strong> <span id="confirmJapanese"></span></p>
+                <p><strong>メールアドレス:</strong> <span id="confirmEmail"></span></p>
+                <p><strong>お電話番号:</strong> <span id="confirmPhone"></span></p>
+                <p><strong>メッセージ内容:</strong> <span id="confirmMessage"></span></p>
+                <button onclick="closeModal()">修正する</button>
+                <button onclick="submitForm()">送信する</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="information">
+            <img src="./logo/allinus_logo.svg">
+            <ul>
+                <li>会社名: 株式会社ALLINUS-オリナス-</li>
+                <li>所在地: 福井県鯖江市本町1丁目3番19-3号101</li>
+                <li>設立: 2024年2月14日</li>
+                <li>代表者: 代表取締役社長　加藤瑞穂</li>
+            </ul>
+        </div>
+        <div class="sitemap">
+            <h3>サイトマップ</h3>
+            <ul>
+                <li><a href="#philosophy">企業理念</a></li>
+                <li><a href="#business">事業内容</a></li>
+                <li><a href="#media">メディア掲載実績</a></li>
+                <li><a href="#lecture">講演実績</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+    
+</html>
