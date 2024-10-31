@@ -376,6 +376,10 @@
                     <input class="c-form__input" id="field-japanese" placeholder="オリナス　ココロ" type="text" required="required" />
                 </div>
                 <div class="c-form__item">
+                    <label class="c-form__label" for="field-company">会社法人名</label>
+                    <input class="c-form__input" id="field-company" placeholder="株式会社○○" type="text" required="required" />
+                </div>
+                <div class="c-form__item">
                     <label class="c-form__label" for="field-mail">メールアドレス<span class="c-form__required">必須</span></label>
                     <input class="c-form__input" id="field-mail" placeholder="sample@gmail.com" type="email" required="required" />
                 </div>
@@ -388,7 +392,7 @@
                     <textarea class="c-form__input" id="field-message" placeholder="お問い合わせ内容"></textarea>
                 </div>
                 <div class="c-form__submit">
-                    <button type="button" onclick="openModal()">送信内容を確認</button>
+                    <button type="button" onclick="openModal()">受付内容を確認</button>
                 </div>
             </form>
         </div>
@@ -396,14 +400,15 @@
         <!-- モーダルウィンドウ -->
         <div id="confirmationModal" class="modal">
             <div class="modal-content">
-                <h2>送信内容を確認してください</h2>
+                <h2>受付内容を<br>確認してください</h2>
                 <p><strong>お名前:</strong> <span id="confirmName"></span></p>
                 <p><strong>フリガナ:</strong> <span id="confirmJapanese"></span></p>
+                <p><strong>会社法人名:</strong> <span id="confirmCompany"></span></p>
                 <p><strong>メールアドレス:</strong> <span id="confirmEmail"></span></p>
                 <p><strong>お電話番号:</strong> <span id="confirmPhone"></span></p>
                 <p><strong>メッセージ内容:</strong> <span id="confirmMessage"></span></p>
                 <button onclick="closeModal()">修正する</button>
-                <button onclick="submitForm()">送信する</button>
+                <button onclick="submitForm()">受付する</button>
             </div>
         </div>
     </div>
