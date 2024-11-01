@@ -83,6 +83,23 @@ textarea.c-form__input {
     border-radius: 10px;
     width: 300px;
     text-align: center;
+	max-height: 50%;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+	padding: 0;
+}
+
+.modal-content h2::before,.modal-content h2::after {
+	display: none;
+}
+
+.modal-content p, .modal-content span {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin: 16px 0 0 0;
 }
 
 button {
