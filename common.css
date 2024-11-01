@@ -176,7 +176,17 @@ body {
     padding-bottom: 0.2em;
   }
   
+  .spbr {
+    display: none;
+  }
+
   @media (max-width: 768px) {
+    .spbr {
+      display: block;
+    }
+    .container {
+      width: 90%;
+    }
     footer {
       flex-direction: row;
       padding: 0em 0em 0em 3em;

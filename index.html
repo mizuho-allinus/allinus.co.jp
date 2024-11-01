@@ -196,18 +196,33 @@
             }
 
             .philosophy h3 {
-                font-size: 1.6rem;
+                font-size: 2.0rem;
             }
 
             .philosophy p {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
+            }
+            .philosophy .spbr {
+                display: none;
+            }
+
+            @media screen and (max-width: 724px) {
+                .philosophy h3 {
+                    font-size: 1.6rem;
+                }
+                .philosophy p {
+                    font-size: 1.2rem;
+                }
+                .philosophy .spbr {
+                    display: block;
+                }
             }
 
         </style>
         <h2 id="philosophy" class="anchor">企業理念</h2>
         <div class="philosophy">
             <h3>「 暮らしのなかに看護を 」</h3>
-            <p>暮らしのなかで人々がもつ<br>ナーシングの力を最大化することで<br>まちを豊かに</p>
+            <p>暮らしのなかで人々がもつ<br>ナーシングの力を最大化することで<br class=spbr>まちを豊かに</p>
         </div>
         
         <h2 id="business" class="anchor">事業内容</h2>
@@ -239,8 +254,13 @@
 
             .main-desc {
                 text-align: center;
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 color: #555;
+            }
+            @media screen and (max-width: 724px) {
+                .main-desc {
+                    font-size: 1.1rem;
+                }
             }
         </style>
         
@@ -249,7 +269,7 @@
         </div>
         
         <p class="main-desc">
-            各企業の社風や文化、雰囲気に合わせた、健康課題の解決をお手伝いします
+            各企業の社風や文化、雰囲気に合わせた、<br class=spbr>健康課題の解決をお手伝いします
         </p>
         
         <div class="biz-details">
@@ -335,25 +355,24 @@
         <h2 id="lecture" class="anchor">講演実績</h2>
 
         <ul>
-            <li><span class="date">2020.09.20</span> 日本ホスピス・在宅ケア研究会全国大会　講演</li>
-            <li><span class="date">2020.12.06</span> 福井県薬剤師会　健康サポート薬局研修講演</li>
-            <li><span class="date">2021.01.23</span> 福井ライフアカデミー講座「地域づくり」講演</li>
-            <li><span class="date">2021.09.01</span> 福井県　県職員研修講師</li>
-            <li><span class="date">2022.08.29</span> 日本地域看護学会　第25回学術集会にて登壇</li>
-            <li><span class="date">2022.11.22</span> 福井県　県職員研修講師</li>
-            <li><span class="date">2023.07.19</span> 大野市社会福祉協議会講演</li>
-            <li><span class="date">2023.09.16</span> 敦賀市　介護福祉団体依頼講演</li>
-            <li><span class="date">2023.10.14</span> 鯖江市　市民活躍課依頼講演</li>
-            <li><span class="date">2023.11.12</span> <a href="https://amanism.jp/ucma/report/entry-839.html">尼崎大学　笑うケンシン　講演</a>
-            </li>
-            <li><span class="date">2024.01.25</span> CHESS　学術講演会　講演</li>
-            <li><span class="date">2024.02.13</span> 第40回　福井県商工会議所青年部連合会　講演</li>
-            <li><span class="date">2024.03.05</span> 坂井市商工会議所青年部　講演</li>
-            <li><span class="date">2024.04.16</span> 高浜町/福井大学　健高カフェ　講演</li>
-            <li><span class="date">2024.05.10</span> 仁愛女子高等学校　創立記念講演</li>
-            <li><span class="date">2024.06.08</span> プライマリケア連合学会　キャリアcafé講演</li>
-            <li><span class="date">2024.07.28</span> かいごの学校　講演</li>
-            <li><span class="date">2024.09.15</span> 南越前町シンポジウム　講演</li>
+            <li><span class="date">2020.09.20</span>　日本ホスピス・在宅ケア研究会全国大会　講演</li>
+            <li><span class="date">2020.12.06</span>　福井県薬剤師会　健康サポート薬局研修講演</li>
+            <li><span class="date">2021.01.23</span>　福井ライフアカデミー講座「地域づくり」講演</li>
+            <li><span class="date">2021.09.01</span>　福井県　県職員研修講師</li>
+            <li><span class="date">2022.08.29</span>　日本地域看護学会　第25回学術集会にて登壇</li>
+            <li><span class="date">2022.11.22</span>　福井県　県職員研修講師</li>
+            <li><span class="date">2023.07.19</span>　大野市社会福祉協議会講演</li>
+            <li><span class="date">2023.09.16</span>　敦賀市　介護福祉団体依頼講演</li>
+            <li><span class="date">2023.10.14</span>　鯖江市　市民活躍課依頼講演</li>
+            <li><span class="date">2023.11.12</span>　<a href="https://amanism.jp/ucma/report/entry-839.html">尼崎大学　笑うケンシン　講演</a></li>
+            <li><span class="date">2024.01.25</span>　CHESS　学術講演会　講演</li>
+            <li><span class="date">2024.02.13</span>　第40回　福井県商工会議所青年部連合会　講演</li>
+            <li><span class="date">2024.03.05</span>　坂井市商工会議所青年部　講演</li>
+            <li><span class="date">2024.04.16</span>　高浜町/福井大学　健高カフェ　講演</li>
+            <li><span class="date">2024.05.10</span>　仁愛女子高等学校　創立記念講演</li>
+            <li><span class="date">2024.06.08</span>　プライマリケア連合学会　キャリアcafé講演</li>
+            <li><span class="date">2024.07.28</span>　かいごの学校　講演</li>
+            <li><span class="date">2024.09.15</span>　南越前町シンポジウム　講演</li>
 
 
         </ul>
