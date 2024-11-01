@@ -52,7 +52,7 @@ header li {
   color: #000;
   font-weight: bold;
   text-align: center;
-  padding: 30px 30px 26px 30px;
+  padding: 28px 30px 28px 30px;
 }
 
 #header-logo img {
@@ -157,6 +157,10 @@ main img {
   text-transform: uppercase;
 }
 
+.menu__item li br {
+  display: none;
+}
+
 #menu__toggle {
   opacity: 0;
 
@@ -212,10 +216,19 @@ footer {
 
   header li {
     width: 128px;
+    padding: 28px 5px 28px 5px;
+  }
+
+  .nav-prf {
+    padding: 16px 5px;
   }
 
   .heart {
     display: none;
+  }
+
+  .menu__item li br {
+    display: block;
   }
 
   #menu__toggle {
@@ -277,7 +290,7 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 26.8em;
+    height: 33.5em;;
     margin: -600px 0 0 0;
     padding: 0 0;
     text-align: center;
@@ -359,7 +372,7 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 26.8em;
+    height: 33.5em;;
     margin: -600px 0 0 0;
     padding: 0 0;
     text-align: center;

@@ -123,13 +123,12 @@
             <label class="menu__btn" for="menu__toggle">
             <span></span>
             </label>
-            <ul class="menu__box">
-                <div id="nav-content">
+            <ul class="menu__box" id="nav-content">
                     <a class="menu__item" href="#philosophy"><li>企業理念</li></a>
                     <a class="menu__item" href="#business"><li>事業内容</li></a>
+                    <a class="menu__item" href="#profile"><li class="nav-prf">代表取締役<br>プロフィール</li></a>
                     <a class="menu__item" href="#media"><li>メディア掲載実績</li></a>
                     <a class="menu__item" href="#lecture"><li>講演実績</li></a>
-                </div>
             </ul>
         </nav>
     </header>
@@ -310,7 +309,77 @@
             </p>
         </div>
         -->
-        
+
+        <h2 id="profile" class="anchor">代表取締役プロフィール</h2>
+        <div class="biz-details">
+            <style>
+                .prf-main {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: left;
+                    font-size: 1.27rem;
+                    line-height: 1.6
+                }
+                .prf-main img {
+                    border-radius: 45px;
+                    width: 40%;
+                    margin-right: 30px;
+                }
+
+                @media screen and (max-width: 1023px) {
+                    .prf-main {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    .prf-main img {
+                        margin-right: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .prf-main img {
+                        width: 60%;
+                    }
+                    .prf-main {
+                        font-size: 1.1rem;
+                    }
+                }
+
+                @media (max-width: 429px) {
+                    .prf-main {
+                        font-size: 1rem;
+                    }
+                }
+
+            </style>
+            <div class="prf-main">
+                <img src="img/prfImg.jpg">
+            
+                <b>株式会社ALLINUS-オリナス-<br>
+                代表取締役　加藤瑞穂<br>
+                （看護師/保健師/コミュニティナース）</b>
+            </div>
+
+            <div class="prf-sub">
+                <p class="desc">
+                    福井大学医学部看護学科卒業後、福井大学医学部附属病院外科勤務。<br>
+                    その後仲間と共に訪問看護ステーションを設立し、訪問看護師として地域ケアに飛び込む。
+                    暮らしのなかで幅広い在宅ケア・看とりをするなかで『その人らしく最期まで生ききるを支えたい』と思い、地域に身近にいるコミュニティナースとしても活動を開始。
+                    病気になってから（医療が必要になってから）出会うのではなく、暮らしのなか（予防のフェーズ）で心地よく人と人として出会う事で、その人らしさを大切にしつつ暮らしのなかに溶け込んだ、『人間のいのちと暮らしを守る看護ケア』を目指す。
+                    現在は住民さんや行政・専門職と共に、暮らしに佇む看護師として多岐に活動中であり、
+                    2024年2月に暮らしの看護最大化を目指す株式会社ALLINUSオリナスを設立。
+                    働く人の健康（幸）を見守り、企業の中に保健室を実装する取り組みを実践。
+                    2024年7月にはショッピングモールエルパと協働してユース保健室機能を併せ持った、
+                    ユース世代の居場所づくりの場「こみかるユース福井」を仲間と共に開設し共同代表を務める。さらに暮らしのなかのあちこちで小さくがんサロンをひらく「がんコミ！」の代表なども務めており、分散型のコミュニティを各地で育んでいる。
+                    
+                </p>
+            </div>
+
+
+        </div>
         
         <h2 id="media" class="anchor">メディア掲載実績</h2>
         <style>
@@ -436,6 +505,7 @@
             <ul>
                 <li><a href="#philosophy">企業理念</a></li>
                 <li><a href="#business">事業内容</a></li>
+                <li><a href="#profile">代表取締役プロフィール</a></li>
                 <li><a href="#media">メディア掲載実績</a></li>
                 <li><a href="#lecture">講演実績</a></li>
             </ul>
