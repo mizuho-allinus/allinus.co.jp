@@ -107,6 +107,10 @@ body {
   button:hover {
     background-color: #e04b4f;
   }
+
+  a {
+    color: black !important;
+  }
   
   /* フッター */
   /* footer {
