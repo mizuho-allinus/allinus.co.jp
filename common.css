@@ -204,5 +204,25 @@ body {
     .sitemap {
       display: none;
     }
+    h2 {
+      font-size: 1.7em;
+    }
+    h2::before {
+      top: 3.1em;
+    }
+    h2::after {
+      top: 3.7em;
+    }
   }
-  
+
+  @media (max-width: 400px) {
+    h2 {
+      font-size: 1.5em;
+    }
+    h2::before {
+      top: 3.5em;
+    }
+    h2::after {
+      top: 4.2em;
+    }
+  }
