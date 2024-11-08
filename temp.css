@@ -52,7 +52,7 @@ header li {
   color: #000;
   font-weight: bold;
   text-align: center;
-  padding: 28px 30px 28px 30px;
+  padding: 18px 30px;
 }
 
 #header-logo img {
@@ -215,8 +215,9 @@ footer {
   }
 
   header li {
-    width: 128px;
+    width: 100px;
     padding: 28px 5px 28px 5px;
+    font-size: 85%;
   }
 
   .nav-prf {
