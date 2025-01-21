@@ -127,10 +127,11 @@ body {
 
   footer {
     background-color: pink;
-    padding: 0em 0em 0em 9em;
+    padding: 1em 0em 3em 9em;
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: space-between;
+    align-items: center;
   }
   
   footer .information, 
