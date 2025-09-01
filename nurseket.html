@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ナースケット by ALLINUS</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Arial", sans-serif;
+				background-color: white;
+				padding: 0;
+			}
+
+			.container {
+				display: flex;
+				flex-direction: row;
+				width: 100vw;
+				height: 100vh;
+				background-color: white;
+			}
+
+			.img-slide {
+				flex: 1;
+				height: 100%;
+				background-color: gray;
+				z-index: 999;
+			}
+			.main {
+				flex: 1;
+				height: 100%;
+				padding: 40px;
+				box-sizing: border-box;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.pink-triangle-lt-container {
+				position: absolute;
+				top: -7vw;
+				left: -5vw;
+				width: 22vw;
+				max-width: 300px;
+				height: auto;
+				aspect-ratio: 347.873 / 320.518;
+				z-index: 1;
+				pointer-events: none;
+			}
+
+			.pink-triangle-lt-wrapper,
+			.pink-triangle-lt-inner {
+				width: 100%;
+				height: 100%;
+				position: static;
+				transform: rotate(290deg);
+			}
+
+			.pink-triangle-rm-container {
+				position: absolute;
+				top: 50%;
+				right: -20%;
+				transform: translateY(-50%);
+				width: 22vw;
+				max-width: 300px;
+				height: auto;
+				aspect-ratio: 347.873 / 320.518;
+				z-index: 1;
+				pointer-events: none;
+			}
+
+			.pink-triangle-rm-wrapper,
+			.pink-triangle-rm-inner {
+				width: 100%;
+				height: 100%;
+				position: static;
+				transform: rotate(208deg);
+			}
+
+			.pink-circle-rt {
+				position: absolute;
+				top: -3vw;
+				right: -5vw;
+				width: 18vw;
+				max-width: 212px;
+				height: auto;
+				aspect-ratio: 212 / 213;
+				z-index: 2;
+			}
+			.pink-circle-lb {
+				position: absolute;
+				left: 11vw;
+				bottom: -11vw;
+				width: 18vw;
+				max-width: 212px;
+				height: auto;
+				aspect-ratio: 212 / 213;
+				z-index: 2;
+			}
+			.pink-rect-lm {
+				position: absolute;
+				top: 60%;
+				left: -20%;
+				transform: translateY(-50%);
+				background-color: #ff66c4;
+				width: 18vw;
+				max-width: 252px;
+				min-width: 120px;
+				height: 16vw;
+				max-height: 349px;
+				min-height: 160px;
+				border-radius: 4vw;
+			}
+
+			.pink-rect-rb {
+				position: absolute;
+				right: -8vw;
+				bottom: -8vw;
+				width: 18vw;
+				max-width: 252px;
+				min-width: 120px;
+				height: 16vw;
+				max-height: 349px;
+				min-height: 160px;
+				background-color: #ff66c4;
+				z-index: 2;
+				transform: rotate(245deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="img-slide"></div>
+			<div class="main">
+				<div class="pink-triangle-lt-container">
+					<div class="pink-triangle-lt-wrapper">
+						<div class="pink-triangle-lt-inner">
+							<svg
+								fill="none"
+								preserveAspectRatio="none"
+								viewBox="0 0 302 241"
+							>
+								<path
+									d="M150.936 0L301.57 240.388H0.303055L150.936 0Z"
+									fill="#FF66C4"
+								/>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="pink-circle-rt">
+					<svg
+						fill="none"
+						preserveAspectRatio="none"
+						viewBox="0 0 212 213"
+					>
+						<ellipse
+							cx="106"
+							cy="106.5"
+							fill="#FF66C4"
+							rx="106"
+							ry="106.5"
+						/>
+					</svg>
+				</div>
+				<div class="pink-rect-lm"></div>
+				<div class="pink-triangle-rm-container">
+					<div class="pink-triangle-rm-wrapper">
+						<div class="pink-triangle-rm-inner">
+							<svg
+								fill="none"
+								preserveAspectRatio="none"
+								viewBox="0 0 302 241"
+							>
+								<path
+									d="M150.936 0L301.57 240.388H0.303055L150.936 0Z"
+									fill="#FF66C4"
+								/>
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="pink-circle-lb">
+					<svg
+						fill="none"
+						preserveAspectRatio="none"
+						viewBox="0 0 212 213"
+					>
+						<ellipse
+							cx="106"
+							cy="106.5"
+							fill="#FF66C4"
+							rx="106"
+							ry="106.5"
+						/>
+					</svg>
+				</div>
+				<div class="pink-rect-rb"></div>
+			</div>
+		</div>
+	</body>
+</html>
