@@ -206,6 +206,50 @@
 				font-size: 2em;
 				text-align: center;
 			}
+
+			@keyframes sway {
+				0% {
+					transform: translateY(0) rotate(-2deg) scale(1);
+				}
+				20% {
+					transform: translateY(-6px) rotate(2deg) scale(1.03);
+				}
+				40% {
+					transform: translateY(2px) rotate(-1deg) scale(0.98);
+				}
+				60% {
+					transform: translateY(-4px) rotate(1deg) scale(1.02);
+				}
+				80% {
+					transform: translateY(3px) rotate(-2deg) scale(1);
+				}
+				100% {
+					transform: translateY(0) rotate(-2deg) scale(1);
+				}
+			}
+
+			.sway-anim {
+				animation: sway 10s ease-in-out infinite;
+			}
+
+			.pink-triangle-lt-container .sway-anim {
+				animation-delay: 0s;
+			}
+			.pink-triangle-rm-container .sway-anim {
+				animation-delay: 1s;
+			}
+			.pink-circle-rt .sway-anim {
+				animation-delay: 0.5s;
+			}
+			.pink-circle-lb .sway-anim {
+				animation-delay: 1.5s;
+			}
+			.pink-rect-lm .sway-anim {
+				animation-delay: 2s;
+			}
+			.pink-rect-rb .sway-anim {
+				animation-delay: 2.5s;
+			}
 		</style>
 	</head>
 	<body>
@@ -241,69 +285,81 @@
 					</div>
 				</div>
 				<div class="pink-triangle-lt-container">
-					<div class="pink-triangle-lt-wrapper">
-						<div class="pink-triangle-lt-inner">
-							<svg
-								fill="none"
-								preserveAspectRatio="none"
-								viewBox="0 0 302 241"
-							>
-								<path
-									d="M150.936 0L301.57 240.388H0.303055L150.936 0Z"
-									fill="#FF66C4"
-								/>
-							</svg>
+					<div class="sway-anim">
+						<div class="pink-triangle-lt-wrapper">
+							<div class="pink-triangle-lt-inner">
+								<svg
+									fill="none"
+									preserveAspectRatio="none"
+									viewBox="0 0 302 241"
+								>
+									<path
+										d="M150.936 0L301.57 240.388H0.303055L150.936 0Z"
+										fill="#FF66C4"
+									/>
+								</svg>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="pink-circle-rt">
-					<svg
-						fill="none"
-						preserveAspectRatio="none"
-						viewBox="0 0 212 213"
-					>
-						<ellipse
-							cx="106"
-							cy="106.5"
-							fill="#FF66C4"
-							rx="106"
-							ry="106.5"
-						/>
-					</svg>
+					<div class="sway-anim">
+						<svg
+							fill="none"
+							preserveAspectRatio="none"
+							viewBox="0 0 212 213"
+						>
+							<ellipse
+								cx="106"
+								cy="106.5"
+								fill="#FF66C4"
+								rx="106"
+								ry="106.5"
+							/>
+						</svg>
+					</div>
 				</div>
-				<div class="pink-rect-lm"></div>
+				<div class="pink-rect-lm">
+					<div class="sway-anim"></div>
+				</div>
 				<div class="pink-triangle-rm-container">
-					<div class="pink-triangle-rm-wrapper">
-						<div class="pink-triangle-rm-inner">
-							<svg
-								fill="none"
-								preserveAspectRatio="none"
-								viewBox="0 0 302 241"
-							>
-								<path
-									d="M150.936 0L301.57 240.388H0.303055L150.936 0Z"
-									fill="#FF66C4"
-								/>
-							</svg>
+					<div class="sway-anim">
+						<div class="pink-triangle-rm-wrapper">
+							<div class="pink-triangle-rm-inner">
+								<svg
+									fill="none"
+									preserveAspectRatio="none"
+									viewBox="0 0 302 241"
+								>
+									<path
+										d="M150.936 0L301.57 240.388H0.303055L150.936 0Z"
+										fill="#FF66C4"
+									/>
+								</svg>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="pink-circle-lb">
-					<svg
-						fill="none"
-						preserveAspectRatio="none"
-						viewBox="0 0 212 213"
-					>
-						<ellipse
-							cx="106"
-							cy="106.5"
-							fill="#FF66C4"
-							rx="106"
-							ry="106.5"
-						/>
-					</svg>
+					<div class="sway-anim">
+						<svg
+							fill="none"
+							preserveAspectRatio="none"
+							viewBox="0 0 212 213"
+						>
+							<ellipse
+								cx="106"
+								cy="106.5"
+								fill="#FF66C4"
+								rx="106"
+								ry="106.5"
+							/>
+						</svg>
+					</div>
 				</div>
-				<div class="pink-rect-rb"></div>
+				<div class="pink-rect-rb">
+					<div class="sway-anim"></div>
+				</div>
 			</div>
 		</div>
 	</body>
