@@ -37,7 +37,6 @@
 				flex-direction: column;
 				justify-content: space-between;
 				height: 100%;
-				padding: 40px;
 				box-sizing: border-box;
 				position: relative;
 				overflow: hidden;
@@ -50,15 +49,28 @@
 				margin-top: 7%;
 			}
 			.main-bottom {
+				display: flex;
 				width: 100%;
+				justify-content: flex-end;
+				padding-right: 10%;
+			}
+
+			.main-bottom-left {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
-				gap: 1.5em;
-				justify-content: start;
-				align-content: start;
-				max-width: 350px;
-				margin-left: 5%;
+				gap: 2em;
+			}
+
+			.main-bottom-right {
+				display: flex;
+			}
+
+			.main-bottom-right svg {
+				width: 100%;
+				max-width: 180px;
+				height: auto;
+				display: block;
 			}
 
 			.pink-triangle-lt-container {
@@ -271,17 +283,22 @@
 					</div>
 				</div>
 				<div class="main-bottom">
-					<div class="cstm-box-stitch-white">
-						<p>健康相談</p>
+					<div class="main-bottom-left">
+						<div class="cstm-box-stitch-white">
+							<p>健康相談</p>
+						</div>
+						<div class="cstm-box-stitch-white">
+							<p>居場所</p>
+						</div>
+						<div class="cstm-box-stitch-white">
+							<p>暮らし<br />サポート</p>
+						</div>
+						<div class="cstm-box-stitch-white">
+							<p>健幸</p>
+						</div>
 					</div>
-					<div class="cstm-box-stitch-white">
-						<p>居場所</p>
-					</div>
-					<div class="cstm-box-stitch-white">
-						<p>暮らし<br />サポート</p>
-					</div>
-					<div class="cstm-box-stitch-white">
-						<p>健幸</p>
+					<div class="main-bottom-right">
+						<img src="./img/nurse.svg" />
 					</div>
 				</div>
 				<div class="pink-triangle-lt-container">
