@@ -10,6 +10,9 @@
 				padding: 0;
 				box-sizing: border-box;
 			}
+			a {
+				text-decoration: none;
+			}
 
 			body {
 				font-family: "Arial", sans-serif;
@@ -65,6 +68,8 @@
 				justify-content: flex-start;
 				align-items: flex-start;
 				pointer-events: none; /* ロゴの上で操作できなくする場合 */
+				padding: 0.5rem;
+				background-color: white;
 			}
 			.slide-img-overlay img {
 				width: 100%;
@@ -93,7 +98,6 @@
 				flex: 1;
 				display: flex;
 				flex-direction: column;
-				justify-content: space-between;
 				height: 100%;
 				box-sizing: border-box;
 				position: relative;
@@ -104,7 +108,7 @@
 				display: flex;
 				justify-items: center;
 				align-items: center;
-				margin-top: 7%;
+				margin-top: 3%;
 				flex-direction: column;
 			}
 			.main-top-title {
@@ -116,14 +120,24 @@
 				display: flex;
 				width: 100%;
 				justify-content: flex-end;
+				margin-top: 1rem;
 				padding-right: 10%;
 			}
 
 			.main-bottom-left {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: 1fr 1fr;
-				gap: 2em;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			.main-bottom-left a {
+				font-size: 1.5rem;
+			}
+
+			.main-bottom-left img {
+				width: 20rem;
+				height: auto;
+				object-fit: contain;
 			}
 
 			.main-bottom-right {
@@ -132,6 +146,12 @@
 
 			.main-bottom-right img {
 				z-index: 1;
+				object-fit: contain;
+			}
+			.attention {
+				z-index: 1;
+				text-align: center;
+				margin-top: 0.5rem;
 			}
 
 			.pink-triangle-lt-container {
@@ -329,7 +349,7 @@
 		<div class="container">
 			<div class="img-slide">
 				<div class="slide-img-overlay">
-					<img src="./img/nurseketLogo.jpg" />
+					<img src="./img/nurseketLogoB.png" />
 				</div>
 				<img src="./img/nurseketImg2.jpg" class="slide-img" />
 				<img src="./img/nurseketImg3.jpg" class="slide-img" />
@@ -339,7 +359,9 @@
 			<div class="main">
 				<div class="main-top">
 					<div class="main-top-title">
-						<h1>株式会社オリナスが運営する看護師チーム</h1>
+						<h1>
+							ナースケットとは<br />オリナスが運営する看護師チーム
+						</h1>
 					</div>
 					<div class="cstm-box-handdrawn">
 						<div class="business-title">
@@ -356,22 +378,24 @@
 				</div>
 				<div class="main-bottom">
 					<div class="main-bottom-left">
-						<div class="cstm-box-stitch-white">
-							<p>健康相談</p>
-						</div>
-						<div class="cstm-box-stitch-white">
-							<p>居場所</p>
-						</div>
-						<div class="cstm-box-stitch-white">
-							<p>暮らし<br />サポート</p>
-						</div>
-						<div class="cstm-box-stitch-white">
-							<p>健幸</p>
-						</div>
+						<img src="./img/instagram.png" />
+						<a
+							href="https://www.instagram.com/nurseket_fukui/"
+							target="_blank"
+							>【nurseket_fukui】</a
+						>
 					</div>
 					<div class="main-bottom-right">
 						<img src="./img/nurse.svg" />
 					</div>
+				</div>
+				<div class="attention">
+					<p>
+						※採用等詳しく聞きたい方はオリナスWEBページ<a
+							href="https://allinus.co.jp/#contact"
+							>お問い合わせ</a
+						>まで
+					</p>
 				</div>
 				<div class="pink-triangle-lt-container">
 					<div class="sway-anim">
