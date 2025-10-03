@@ -88,60 +88,96 @@ body {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
 	height: 100%;
 	box-sizing: border-box;
 	position: relative;
 	overflow: hidden;
+	background-color: white;
+	z-index: 0;
 }
 .main-top {
 	width: 100%;
 	display: flex;
 	justify-items: center;
 	align-items: center;
-	margin-top: 3%;
 	flex-direction: column;
+	position: relative;
+	z-index: 1;
 }
 .main-top-title {
 	margin-bottom: 1em;
 	text-align: center;
 	padding: 0 10%;
+	position: relative;
+	z-index: 1;
+}
+
+.main-top-title h1 {
+	font-size: clamp(1.5rem, 0.357rem + 1.79vw, 2.5rem);
+	line-height: 1.5;
 }
 .main-bottom {
 	display: flex;
 	width: 100%;
-	justify-content: flex-end;
+	justify-content: center;
 	margin-top: 1rem;
-	padding-right: 10%;
+	position: relative;
+	z-index: 1;
 }
 
 .main-bottom-left {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	position: relative;
+	z-index: 1;
 }
 
 .main-bottom-left a {
-	font-size: 1.5rem;
+	font-size: clamp(1rem, 1.5vw, 1.5rem);
+	color: #333;
+	transition: color 0.3s ease;
+}
+
+.main-bottom-left a:hover {
+	color: #ff66c4;
 }
 
 .main-bottom-left img {
-	width: 20rem;
+	width: 16.5rem;
 	height: auto;
 	object-fit: contain;
 }
 
 .main-bottom-right {
 	display: flex;
+	position: relative;
+	z-index: 1;
 }
 
 .main-bottom-right img {
-	z-index: 1;
 	object-fit: contain;
+	width: 16.5rem;
+	height: auto;
 }
 .attention {
+	position: relative;
 	z-index: 1;
 	text-align: center;
 	margin-top: 0.5rem;
+	font-size: clamp(0.8rem, 0.571rem + 0.36vw, 1rem);
+	padding: 0 1rem;
+}
+
+.attention a {
+	color: #ff66c4;
+	text-decoration: underline;
+	transition: opacity 0.3s ease;
+}
+
+.attention a:hover {
+	opacity: 0.7;
 }
 
 .pink-triangle-lt-container {
@@ -152,7 +188,7 @@ body {
 	max-width: 300px;
 	height: auto;
 	aspect-ratio: 347.873 / 320.518;
-	z-index: 0;
+	z-index: -1;
 	pointer-events: none;
 }
 
@@ -173,7 +209,7 @@ body {
 	max-width: 300px;
 	height: auto;
 	aspect-ratio: 347.873 / 320.518;
-	z-index: 0;
+	z-index: -1;
 	pointer-events: none;
 }
 
@@ -193,7 +229,7 @@ body {
 	max-width: 212px;
 	height: auto;
 	aspect-ratio: 212 / 213;
-	z-index: 0;
+	z-index: -1;
 }
 .pink-circle-lb {
 	position: absolute;
@@ -203,7 +239,7 @@ body {
 	max-width: 212px;
 	height: auto;
 	aspect-ratio: 212 / 213;
-	z-index: 0;
+	z-index: -1;
 }
 .pink-rect-lm {
 	position: absolute;
@@ -218,6 +254,7 @@ body {
 	max-height: 349px;
 	min-height: 160px;
 	border-radius: 4vw;
+	z-index: -1;
 }
 
 .pink-rect-rb {
@@ -231,7 +268,7 @@ body {
 	max-height: 349px;
 	min-height: 160px;
 	background-color: #ff66c4;
-	z-index: 0;
+	z-index: -1;
 	transform: rotate(245deg);
 }
 
@@ -245,16 +282,19 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
+	z-index: 1;
 }
 .business-title {
 	margin-bottom: 1em;
 }
 
 .cstm-box-handdrawn h2 {
-	font-size: 2em;
+	font-size: clamp(1.4rem, 0.257rem + 1.79vw, 2.4rem);
 }
 .cstm-box-handdrawn li {
-	font-size: 2em;
+	font-size: clamp(1.2rem, 0.057rem + 1.79vw, 2.2rem);
+	line-height: 1.6;
 }
 
 .cstm-box-stitch-white {
@@ -332,4 +372,286 @@ body {
 }
 .pink-rect-rb .sway-anim {
 	animation-delay: 2.5s;
+}
+
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+/* タブレット以下 */
+@media screen and (max-width: 1024px) {
+	.container {
+		flex-direction: column;
+		height: auto;
+		min-height: 100vh;
+	}
+
+	.img-slide {
+		flex: none;
+		height: 40vh;
+		min-height: 300px;
+	}
+
+	.slide-img-overlay {
+		height: 80px;
+	}
+
+	.main {
+		flex: none;
+		min-height: 60vh;
+		padding-bottom: 2rem;
+	}
+
+	.main-top {
+		margin-top: 2rem;
+	}
+
+	.main-top-title h1 {
+		font-size: 1.8rem;
+	}
+
+	.cstm-box-handdrawn {
+		width: 80%;
+		padding: 1.5em;
+		border-radius: 60px 30px 80px 30px / 40px 60px 30px 70px;
+	}
+
+	.cstm-box-handdrawn h2 {
+		font-size: 1.5em;
+	}
+
+	.cstm-box-handdrawn li {
+		font-size: 1.5em;
+	}
+
+	.main-bottom {
+		padding-right: 5%;
+		margin-top: 2rem;
+	}
+
+	.main-bottom-left img {
+		width: 15rem;
+	}
+
+	.main-bottom-left a {
+		font-size: 1.2rem;
+	}
+
+	.main-bottom-right img {
+		max-width: 200px;
+	}
+
+	/* 装飾要素の調整 */
+	.pink-triangle-lt-container {
+		width: 25vw;
+	}
+
+	.pink-triangle-rm-container {
+		width: 25vw;
+	}
+
+	.pink-circle-rt {
+		width: 20vw;
+	}
+
+	.pink-circle-lb {
+		width: 20vw;
+	}
+
+	.pink-rect-lm {
+		width: 20vw;
+		height: 18vw;
+	}
+
+	.pink-rect-rb {
+		width: 20vw;
+		height: 18vw;
+	}
+}
+
+/* タブレット縦・大きめのスマホ (769px - 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+	.main-bottom {
+		flex-direction: row;
+		justify-content: center;
+		gap: 2rem;
+	}
+}
+
+/* スマートフォン */
+@media screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.img-slide {
+		height: 35vh;
+		min-height: 250px;
+	}
+
+	.slide-img-overlay {
+		height: 60px;
+		padding: 0.3rem;
+	}
+
+	.main {
+		padding-bottom: 3rem;
+	}
+
+	.main-top {
+		margin-top: 1.5rem;
+	}
+
+	.main-top-title {
+		padding: 0 5%;
+	}
+
+	.main-top-title h1 {
+		font-size: 1.4rem;
+		line-height: 1.6;
+	}
+
+	.cstm-box-handdrawn {
+		width: 90%;
+		padding: 1.2em;
+		border-radius: 40px 20px 50px 20px / 30px 40px 20px 45px;
+	}
+
+	.business-title {
+		margin-bottom: 0.5em;
+	}
+
+	.cstm-box-handdrawn h2 {
+		font-size: 1.3em;
+	}
+
+	.cstm-box-handdrawn li {
+		font-size: 1.2em;
+		line-height: 1.6;
+	}
+
+	.main-bottom {
+		flex-direction: column;
+		align-items: center;
+		padding-right: 0;
+		margin-top: 1.5rem;
+		gap: 1rem;
+	}
+
+	.main-bottom-left {
+		order: 2;
+	}
+
+	.main-bottom-right {
+		order: 1;
+	}
+
+	.main-bottom-left img {
+		width: 12rem;
+	}
+
+	.main-bottom-left a {
+		font-size: 1rem;
+	}
+
+	.main-bottom-right img {
+		max-width: 150px;
+		max-height: 150px;
+	}
+
+	.attention {
+		font-size: 0.9rem;
+		padding: 0 1rem;
+	}
+
+	/* 装飾要素の調整 */
+	.pink-triangle-lt-container {
+		width: 30vw;
+		top: -10vw;
+		left: -8vw;
+	}
+
+	.pink-triangle-rm-container {
+		width: 25vw;
+		right: -15%;
+	}
+
+	.pink-circle-rt {
+		width: 25vw;
+		top: -5vw;
+		right: -8vw;
+	}
+
+	.pink-circle-lb {
+		width: 25vw;
+		left: 5vw;
+		bottom: -15vw;
+	}
+
+	.pink-rect-lm {
+		width: 25vw;
+		height: 22vw;
+		left: -25%;
+		border-radius: 6vw;
+	}
+
+	.pink-rect-rb {
+		width: 25vw;
+		height: 22vw;
+		right: -12vw;
+		bottom: -12vw;
+	}
+}
+
+/* 小型スマートフォン */
+@media screen and (max-width: 480px) {
+	.img-slide {
+		height: 30vh;
+		min-height: 200px;
+	}
+
+	.slide-img-overlay {
+		height: 50px;
+	}
+
+	.main-top-title h1 {
+		font-size: 1.2rem;
+	}
+
+	.cstm-box-handdrawn {
+		width: 95%;
+		padding: 1em;
+	}
+
+	.cstm-box-handdrawn h2 {
+		font-size: 1.1em;
+	}
+
+	.cstm-box-handdrawn li {
+		font-size: 1em;
+	}
+
+	.main-bottom-left img {
+		width: 10rem;
+	}
+
+	.main-bottom-left a {
+		font-size: 0.9rem;
+	}
+
+	.main-bottom-right img {
+		max-width: 120px;
+		max-height: 120px;
+	}
+
+	.attention {
+		font-size: 0.8rem;
+	}
+
+	/* 装飾要素をさらに小さく */
+	.pink-triangle-lt-container,
+	.pink-triangle-rm-container,
+	.pink-circle-rt,
+	.pink-circle-lb {
+		opacity: 0.8;
+	}
 }
