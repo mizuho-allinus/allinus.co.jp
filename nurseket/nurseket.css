@@ -157,6 +157,7 @@ body {
 	width: 16.5rem;
 	height: auto;
 	object-fit: contain;
+	border-radius: 15px;
 }
 
 .main-bottom-right {
