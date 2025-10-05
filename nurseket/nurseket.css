@@ -480,6 +480,7 @@ body {
 	.pink-rect-lm {
 		width: 20vw;
 		height: 18vw;
+		left: -15%;
 	}
 
 	.pink-rect-rb {
@@ -617,7 +618,7 @@ body {
 	.pink-rect-lm {
 		width: 25vw;
 		height: 22vw;
-		left: -25%;
+		left: -15%;
 		border-radius: 6vw;
 	}
 
