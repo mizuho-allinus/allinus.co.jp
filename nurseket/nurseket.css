@@ -3,8 +3,16 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
 a {
+	color: #ff66c4;
+	text-decoration: underline;
+	transition: opacity 0.3s ease;
 	text-decoration: none;
+}
+
+a:hover {
+	opacity: 0.7;
 }
 
 body {
@@ -137,12 +145,6 @@ body {
 
 .main-bottom-left a {
 	font-size: clamp(1rem, 1.5vw, 1.5rem);
-	color: #333;
-	transition: color 0.3s ease;
-}
-
-.main-bottom-left a:hover {
-	color: #ff66c4;
 }
 
 .main-bottom-left img {
@@ -169,16 +171,6 @@ body {
 	margin-top: 0.5rem;
 	font-size: clamp(0.8rem, 0.571rem + 0.36vw, 1rem);
 	padding: 0 1rem;
-}
-
-.attention a {
-	color: #ff66c4;
-	text-decoration: underline;
-	transition: opacity 0.3s ease;
-}
-
-.attention a:hover {
-	opacity: 0.7;
 }
 
 .pink-triangle-lt-container {
