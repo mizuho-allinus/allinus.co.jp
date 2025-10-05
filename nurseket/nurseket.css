@@ -126,6 +126,12 @@ body {
 	font-size: clamp(1.5rem, 0.357rem + 1.79vw, 2.5rem);
 	line-height: 1.5;
 }
+
+.nurse-count {
+	z-index: 1;
+	text-align: center;
+}
+
 .main-bottom {
 	display: flex;
 	width: 100%;
