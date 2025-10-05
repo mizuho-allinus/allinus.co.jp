@@ -151,6 +151,7 @@ body {
 }
 
 .main-bottom-left a {
+	margin-top: 0.5rem;
 	font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
